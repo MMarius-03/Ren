@@ -3,6 +3,7 @@ import '../styles/global.css';
 import BackgroundStars from '../components/BackgroundStars';
 import ScrollPolish from '../components/ScrollPolish';
 import ScrollProgressBar from '../components/ScrollProgressBar';
+import BackToTop from '../components/BackToTop';
 
 interface Props {
   title?: string;
@@ -35,5 +36,7 @@ const {
     <div class="relative z-10 min-h-screen">
       <slot />
     </div>
+
+    <BackToTop client:load />
   </body>
 </html>
