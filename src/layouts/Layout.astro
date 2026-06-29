@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import BackgroundStars from '../components/BackgroundStars';
 import ScrollPolish from '../components/ScrollPolish';
+import ScrollProgressBar from '../components/ScrollProgressBar';
 
 interface Props {
   title?: string;
@@ -28,6 +29,7 @@ const {
 
   <body>
     <BackgroundStars client:load />
+    <ScrollProgressBar client:load />
     <ScrollPolish client:load />
 
     <div class="relative z-10 min-h-screen">

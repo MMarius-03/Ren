@@ -2,14 +2,10 @@ import { useEffect } from 'react';
 
 export default function ScrollPolish() {
   useEffect(() => {
-    const progress = document.querySelector<HTMLElement>('[data-scroll-progress]');
     const header = document.querySelector<HTMLElement>('[data-site-header]');
     const revealItems = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'));
 
-    const updateScrollState = () => {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      const ratio = max > 0 ? window.scrollY / max : 0;
-      progress?.style.setProperty('--scroll-progress', `${Math.max(0, Math.min(1, ratio)) * 100}%`);
+    const updateHeaderState = () => {
       header?.toggleAttribute('data-scrolled', window.scrollY > 12);
     };
 
@@ -30,16 +26,14 @@ export default function ScrollPolish() {
       observer.observe(item);
     });
 
-    updateScrollState();
-    window.addEventListener('scroll', updateScrollState, { passive: true });
-    window.addEventListener('resize', updateScrollState);
+    updateHeaderState();
+    window.addEventListener('scroll', updateHeaderState, { passive: true });
 
     return () => {
-      window.removeEventListener('scroll', updateScrollState);
-      window.removeEventListener('resize', updateScrollState);
+      window.removeEventListener('scroll', updateHeaderState);
       observer.disconnect();
     };
   }, []);
 
-  return <div data-scroll-progress className="scroll-progress" aria-hidden="true" />;
+  return null;
 }
