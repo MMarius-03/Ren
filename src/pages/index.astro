@@ -1,17 +1,66 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import Contact from '../components/Contact.astro';
+import CapabilityAccordion from '../components/CapabilityAccordion';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+  title="René - Meat Industry Software"
+  description="A Frappe-powered platform for meat production, inventory, traceability, and plant workflows."
+>
+  <Header />
+
+  <main class="mx-auto max-w-5xl px-5 py-8 sm:px-6 sm:py-12">
+    <Hero />
+
+    <section id="product" class="reveal-block mt-16 border-t border-[#d6b05c]/15 pt-14 sm:mt-20 sm:pt-16" data-reveal>
+      <p class="text-xs uppercase tracking-[0.35em] text-[#d6b05c] sm:text-sm">Product</p>
+      <h2 class="mt-3 max-w-3xl text-2xl font-bold leading-tight text-[#fff8df] sm:text-3xl">
+        One operating layer for the plant floor and back office.
+      </h2>
+
+      <div class="mt-8 grid gap-4 md:grid-cols-3">
+        <div class="feature-card reveal-block border border-[#d6b05c]/15 bg-black/30 p-5 backdrop-blur-md" data-reveal>
+          <span class="feature-index">01</span>
+          <h3 class="text-lg font-bold text-[#fff8df]">Production</h3>
+          <p class="mt-3 leading-7 text-[#c7bda8]">Orders, batches, yields, and floor activity in one flow.</p>
+        </div>
+
+        <div class="feature-card reveal-block border border-[#d6b05c]/15 bg-black/30 p-5 backdrop-blur-md" data-reveal>
+          <span class="feature-index">02</span>
+          <h3 class="text-lg font-bold text-[#fff8df]">Inventory</h3>
+          <p class="mt-3 leading-7 text-[#c7bda8]">Raw materials, finished goods, lots, and movement control.</p>
+        </div>
+
+        <div class="feature-card reveal-block border border-[#d6b05c]/15 bg-black/30 p-5 backdrop-blur-md" data-reveal>
+          <span class="feature-index">03</span>
+          <h3 class="text-lg font-bold text-[#fff8df]">Traceability</h3>
+          <p class="mt-3 leading-7 text-[#c7bda8]">Clear records from intake to dispatch.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="framework" class="reveal-block mt-20 border-t border-[#d6b05c]/15 pt-14 sm:mt-24 sm:pt-16" data-reveal>
+      <p class="text-xs uppercase tracking-[0.35em] text-[#d6b05c] sm:text-sm">Frappe</p>
+      <div class="mt-3 grid gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-start">
+        <div>
+          <h2 class="max-w-3xl text-2xl font-bold leading-tight text-[#fff8df] sm:text-3xl">
+            Built on a proven framework, shaped for a specialized industry.
+          </h2>
+          <p class="mt-5 max-w-3xl leading-8 text-[#c7bda8]">
+            René uses Frappe as the foundation for workflows, roles, documents, reports, and rapid customization.
+          </p>
+        </div>
+
+        <CapabilityAccordion client:load />
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+
+  <Footer />
+</Layout>

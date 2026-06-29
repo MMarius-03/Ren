@@ -1,0 +1,24 @@
+---
+import HeroActions from './HeroActions';
+import MagneticLogo from './MagneticLogo';
+---
+
+<section class="pt-8 text-center sm:pt-14 md:pt-16">
+  <div class="mb-8 sm:mb-10">
+    <MagneticLogo client:load />
+  </div>
+
+  <p class="text-lg font-bold uppercase tracking-[0.5em] text-[#d6b05c] sm:text-xl sm:tracking-[0.58em] md:text-2xl">
+    René
+  </p>
+
+  <h1 class="mx-auto mt-6 max-w-4xl text-3xl font-black leading-tight text-[#fff8df] sm:text-4xl md:text-5xl">
+    Frappe-powered software for the meat industry.
+  </h1>
+
+  <p class="mx-auto mt-6 max-w-2xl text-base leading-8 text-[#c7bda8] sm:text-lg">
+    A futuristic operating layer for production, inventory, traceability, and daily plant workflows.
+  </p>
+
+  <HeroActions client:load />
+</section>

@@ -1,0 +1,16 @@
+---
+import HeaderLinks from './HeaderLinks';
+---
+
+<header data-site-header class="site-header sticky top-0 z-20 border-b border-[#d6b05c]/15 bg-[#050505]/80 backdrop-blur-xl">
+  <nav class="mx-auto flex max-w-5xl flex-col gap-3 px-5 py-4 text-sm sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-6">
+    <div class="flex items-center justify-between gap-4">
+      <a href="/" class="group inline-flex items-center gap-1.5 text-sm font-black lowercase tracking-[0.02em] text-[#d6b05c] transition hover:text-[#fff8df] sm:text-base">
+        <span class="text-[#d6b05c]">./</span>
+        <span>rené</span>
+      </a>
+    </div>
+
+    <HeaderLinks client:load />
+  </nav>
+</header>
